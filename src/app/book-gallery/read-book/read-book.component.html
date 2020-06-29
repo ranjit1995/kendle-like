@@ -1,0 +1,21 @@
+<div style="height: 100vh; margin-bottom: 65px;">
+
+    <!-- <pdf-viewer [src]="src" [show-all]="false"  [page]="page" (after-load-complete)="afterLoadComplete($event)" [original-size]="false" [render-text]="true" class="iframe-placeholder" ></pdf-viewer>
+    <div class="row"> 
+        <div class="col-sm-12">
+            <div class="pagination" style="margin-bottom: 65px; background-color: aliceblue; float: right;">
+                <a >        
+                    <button mat-raised-button color="primary" (click)="previousPage()" [disabled]="page === 1">previousPage</button>
+                </a>
+                <p>{{ page }} / {{ totalPages }}</p>
+                <a >
+                    <button mat-raised-button color="primary" (click)="nextPage()" [disabled]="totalPages === 1 || page===totalPages">Next Page</button>
+                </a>
+            </div>
+        </div>
+    </div>   -->
+    <div *ngIf="newUrl" class="col-sm-12">
+        <iframe [src]="newUrl" frameBorder="0" class="iframe-placeholder" style="width: 100%;height: 500px;border: none;"></iframe>
+      </div>
+    
+</div>

@@ -1,0 +1,12 @@
+<div class="topnav" id="myTopnav">
+    <a [routerLink]="['/home']" [routerLinkActive]="['actives','navigate-active']">Home</a>
+    <a [routerLink]="['/book-gallery/my-content']" [routerLinkActive]="['actives','navigate-active']">My Content</a>
+    <!-- <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a> -->
+  </div>
+  
+  <div>
+    <ng-content></ng-content>
+  </div>
+  

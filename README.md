@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## install angular material
+
+Run `ng add @angular/material`
+
+## install bootstrap
+
+Run `npm install --save bootstrap`
+
+## install ng2-pdf-viewer
+
+Run `npm i ng2-pdf-viewer`
+
+## install ngx-pagination
+
+Run `npm i ngx-pagination`

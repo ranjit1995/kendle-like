@@ -1,0 +1,61 @@
+<div *ngIf="dataSource.length===0">
+    <div class="row" style="text-align: center;">
+        <div class="col-sm-12" > 
+            <p>No Content Found</p>
+        </div>
+    </div>
+</div>
+<div *ngIf="dataSource.length>0">
+    <div class="row padding">
+        <div class="col-sm-6 col-lg-3 col-xs-12 col-md-6"  *ngFor="let data of dataSource | paginate: { itemsPerPage: 8, currentPage: p };let i = index;">
+            <mat-card class="example-card" style="background: beige;">
+                <mat-card-header>
+                    <mat-card-title>{{data.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row padding">
+                        <div class="col-sm-12">
+                            <div style="text-align: center;width: 100%; height: 265px;">
+                                <img mat-card-image [src]="data.url" alt="Photo of a Shiba Inu">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <div class="row auth">
+                        <div class="col-sm-10 col-lg-10 col-xs-10 col-md-10">
+                            <p>{{data.authorName}}</p>
+                        </div>
+                        <div class="col-sm-2 col-lg-2 col-xs-2 col-md-2">
+                            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" [matMenuTriggerFor]="menu" style="float: right;">
+                                <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="viewPdf(data)">View</button>
+                                <button mat-menu-item (click)="deleteContent(data,deleteTemplate)">Delete</button>
+                                </mat-menu>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card> 
+        </div>
+    </div>
+    <div class="row paddPag">
+        <div>
+            <pagination-controls (pageChange)="p = $event" style="float: right;"></pagination-controls>
+        </div>    
+    </div>
+</div>
+
+<ng-template #deleteTemplate>
+    <div class="row" style="padding-bottom: 10%;">
+        <div class="col-sm-12">
+            <p>Do you want to delete this content?</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button mat-raised-button color="primary" style="width: 100px; float: left;" (click)="delete()">Yes</button>
+            <button mat-raised-button color="primary" style="width: 100px; float: right;"(click)="closeModal()">No</button>        
+        </div>
+    </div>  
+</ng-template>
